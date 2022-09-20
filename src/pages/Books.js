@@ -9,7 +9,7 @@ const Books = () => {
     <div>
       {
         books.map(
-          (book) => (<BookItem key={book.id} id={book.id} title={book.title} author={book.author}/>),
+          (book) => (<BookItem key={book.id} id={book.id} title={book.title} author={book.author} category={book.category}/>),
         )
       }
       <AddBook />
