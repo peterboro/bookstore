@@ -1,6 +1,6 @@
 const STATUS_CHECK = 'STATUS_CHECK';
 
-const categoryReducer = (state = [], action) => {
+const categoryReducer = (state = '', action) => {
   switch (action.type) {
     case STATUS_CHECK:
       return 'Under construction';
