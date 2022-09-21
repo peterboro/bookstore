@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/books';
+import { addBookId } from '../redux/books/books';
 
 const AddBook = () => {
   const dispatch = useDispatch();
@@ -13,13 +13,15 @@ const AddBook = () => {
   const fetchAuthor = (e) => setAuthor(e.target.value);
   const fetchCategory = (e) => setCategory(e.target.value);
 
-  const submitBook = (title, author) => {
-    const newBook = {id: uuidv4(), title, author, category,};
+  const submitBook = () => {
+    if (title && author && category) {
+      const newBook = {item_id: uuidv4(), title, author, category,};
 
-    dispatch(addBook(newBook));
+    dispatch(addBookId(newBook));
     setTitle('');
     setAuthor('');
-  };
+    }
+  }
 
   return (
     <div>
@@ -33,11 +35,13 @@ const AddBook = () => {
       <label htmlFor="book-categories">
         <select className="categories" id="category" onChange={fetchCategory} value={category} required>
           <option value="action">Action</option>
-          <option value="science">Science Fiction</option>
+          <option value="science-fiction">Science Fiction</option>
           <option value="economy">Economy</option>
+          <option value="fiction">Fiction</option>
+          <option value="self-help">Self-Help</option>
         </select>
       </label>
-      <button type="submit" onClick={() => submitBook(title, author)}>Add Book</button>
+      <button type="submit" onClick={() => submitBook()}>Add Book</button>
     </form>
   </div>
 );
