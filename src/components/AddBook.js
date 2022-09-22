@@ -27,10 +27,10 @@ const AddBook = () => {
     <div>
     <form className="AddNew">
       <label htmlFor="book-title">
-      <input type="text" placeholder="Book Title" onChange={fetchTitle} value={title} required />
+      <input type="text" className='book-title' placeholder="Book Title" onChange={fetchTitle} value={title} required />
       </label>
       <label htmlFor="book-author">
-      <input type="text" placeholder="Book Author" onChange={fetchAuthor} value={author} required />
+      <input type="text" className='book-author' placeholder="Book Author" onChange={fetchAuthor} value={author} required />
       </label>
       <label htmlFor="book-categories">
         <select className="categories" id="category" onChange={fetchCategory} value={category} required>
@@ -41,7 +41,7 @@ const AddBook = () => {
           <option value="self-help">Self-Help</option>
         </select>
       </label>
-      <button type="submit" onClick={() => submitBook()}>Add Book</button>
+      <button type="submit" className='Add' onClick={() => submitBook()}>Add Book</button>
     </form>
   </div>
 );
