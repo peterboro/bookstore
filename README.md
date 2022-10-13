@@ -14,7 +14,8 @@
 
 ## Live Demo 
 
-In progress
+[Live Demo](https://get-your-read.netlify.app/)
+![Bookstore](https://user-images.githubusercontent.com/27219880/195643118-62265ecf-ba1d-49da-b673-e56554e7bfea.png)
 
 
 ## Getting Started
